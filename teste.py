@@ -1,4 +1,4 @@
-import requests
+import requests 
 
 cep = input("Digite o seu CEP: ")
 
@@ -8,4 +8,4 @@ dados = requests.get(url)
 
 resposta = dados.json()
 
-print(f"Você mora na {resposta["logradouro"]} no bairro {resposta["bairro"]}, na cidade de {resposta}")
+print(f"Você mora na {resposta["logradouro"]} no bairro {resposta["bairro"]}, na cidade de {resposta["localidade"]} no estado de {resposta["estado"]}")

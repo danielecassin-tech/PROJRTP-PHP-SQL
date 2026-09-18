@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 header("Content-Type: application/json");
 
@@ -11,7 +11,7 @@ if($metodo == "POST"){
 
     $dados = json_decode($json,true);
 
-    $sql = "INSET INTO produtos (nome, preco) VALUES (?,?)";
+    $sql = "INSERT INTO produtos (nome,preco) VALUES (?,?)";
 
     $comando = $pdo -> prepare($sql);
 
@@ -21,7 +21,7 @@ if($metodo == "POST"){
     ]);
 
     echo json_encode([
-        "Mensagem"=>"Produto cadastrado com sucesso😊"
+        "Mensagem"=>"Produto cadastrado com sucesso! 😊"
     ]);
 }
 
@@ -33,5 +33,4 @@ if($metodo == "GET"){
     $produtos = $comando -> fetchAll(PDO::FETCH_ASSOC);
 
     echo json_encode($produtos);
-
 }
